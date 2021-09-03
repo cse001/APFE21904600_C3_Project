@@ -25,7 +25,15 @@ public class RestaurantService {
         return restaurantToBeRemoved;
     }
     public int getPrice(List<String> selectedItems, Restaurant restaurant){
-        return -1;
+        int price = 0;
+        for(String selectedItem: selectedItems){
+            for(Item item : restaurant.getMenu()){
+                if (item.getName().equals(selectedItem)){
+                    price += item.getPrice();
+                }
+            }
+        }
+        return price;
     }
 
     public List<Restaurant> getRestaurants() {
