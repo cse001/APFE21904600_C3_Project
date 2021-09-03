@@ -13,7 +13,6 @@ public class RestaurantService {
         throw new restaurantNotFoundException("Restaurant not found!");
     }
 
-
     public Restaurant addRestaurant(String name, String location, LocalTime openingTime, LocalTime closingTime) {
         Restaurant newRestaurant = new Restaurant(name, location, openingTime, closingTime);
         restaurants.add(newRestaurant);
@@ -24,6 +23,9 @@ public class RestaurantService {
         Restaurant restaurantToBeRemoved = findRestaurantByName(restaurantName);
         restaurants.remove(restaurantToBeRemoved);
         return restaurantToBeRemoved;
+    }
+    public int getPrice(List<String> selectedItems, Restaurant restaurant){
+        return -1;
     }
 
     public List<Restaurant> getRestaurants() {
